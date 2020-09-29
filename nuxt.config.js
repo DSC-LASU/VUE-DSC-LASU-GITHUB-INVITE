@@ -20,7 +20,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: ['~/plugins/global_components'],
+  plugins: ['~/plugins/global_components', '~/plugins/vue_resource'],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,

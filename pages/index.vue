@@ -27,6 +27,7 @@
             <div class="form-group">
               <input
                 type="text"
+                v-model="username"
                 placeholder="Enter GitHub Username"
                 class="tw-border tw-appearance-none focus:tw-border-none focus:tw-outline-none tw-w-full tw-py-3 tw-p-2 tw-rounded-md"
               />
@@ -34,23 +35,27 @@
 
             <div class="form-group">
               <input
+                @click="inviteUser()"
                 type="button"
                 value="Get Invite"
-                class="tw-border tw-appearance-none tw-border-none focus:tw-outline-none tw-w-full tw-py-3 tw-p-2 tw-rounded-md tw-bg-google-blue tw-text-white tw-cursor-pointer"
+                class="tw-border tw-font-bold tw-appearance-none tw-border-none focus:tw-outline-none tw-w-full tw-py-3 tw-p-2 tw-rounded-md tw-bg-google-blue tw-text-white tw-cursor-pointer"
               />
             </div>
 
             <div class="form-group">
               <p class="tw-text-center tw-text-sm">
-                Don't Have a GitHub Account? <a href="https://github.com/join" class="tw-text-google-blue tw-font-bold tw-underline">Join Here</a>
+                Don't Have a GitHub Account?
+                <a
+                  href="https://github.com/join"
+                  class="tw-text-google-blue tw-font-bold tw-underline"
+                  >Join Here</a
+                >
               </p>
             </div>
 
-
-
             <div class="form-group tw-mt-32">
               <p class="tw-text-center tw-font-bold tw-text-gray-600">
-               DSC LASU 2020
+                DSC LASU 2020
               </p>
             </div>
           </form>
@@ -61,11 +66,28 @@
 </template>
 
 <script>
-// https://dsclasu-c83d8.web.app/invite
 export default {
   name: 'DSCLASU',
+  data() {
+    return {
+      username: '',
+    }
+  },
+  methods: {
+    async inviteUser() {
+      try {
+        let apiCall = this.$http.post('https://dsclasu-c83d8.web.app/invite', {
+          username: this.username,
+        })
+      } catch (error) {}
+    },
+  },
 }
 </script>
 
 <style>
+.dsc-logo {
+  width: 300px;
+  margin: auto;
+}
 </style>
