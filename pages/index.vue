@@ -142,4 +142,15 @@ input[type='button']:disabled {
   background-color: rgba(66, 133, 244, 0.4);
   cursor: progress;
 }
+
+.main {
+  /* background: #ffffff; */
+  background: url('~assets/img/large-bg.png') no-repeat center;
+  background-size: 1200px;
+  height: 100vh;
+}
+
+.inner-content {
+  background: rgba(255, 255, 255,0.6);
+}
 </style>

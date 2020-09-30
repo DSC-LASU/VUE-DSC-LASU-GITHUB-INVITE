@@ -11,14 +11,96 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'DSC-LASU GITHUB ORGANIZATION INVITATION' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'DSC-LASU GITHUB ORGANIZATION INVITATION',
+      },
+      {
+        name: 'robots',
+        content: 'noarchive, index, follow',
+      },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'DSC-LASU GITHUB ORGANIZATION INVITATION',
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'GITHUB, GOOGLE, DSC, LASU',
+      },
+      {
+        hid: 'itemprop:title',
+        itemprop: 'name',
+        content: 'DSC-LASU GITHUB ORGANIZATION INVITATION',
+      },
+      {
+        hid: 'itemprop:description',
+        itemprop: 'description',
+        content: 'DSC-LASU GITHUB ORGANIZATION INVITATION',
+      },
+      {
+        hid: 'itemprop:image',
+        itemprop: 'image',
+        content: '',
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'DSC-LASU GITHUB ORGANIZATION INVITATION',
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: '',
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: '',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'DSC-LASU GITHUB ORGANIZATION INVITATION',
+      },
+      {
+        hid: 'twitter:card',
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        hid: 'twitter:site',
+        name: 'twitter:site',
+        content: '',
+      },
+      {
+        hid: 'twitter:title',
+        name: 'twitter:title',
+        content: 'DSC-LASU GITHUB ORGANIZATION INVITATION',
+      },
+      {
+        hid: 'twitter:description',
+        name: 'twitter:description',
+        content: 'DSC-LASU GITHUB ORGANIZATION INVITATION',
+      },
+      {
+        hid: 'twitter:url',
+        name: 'twitter:url',
+        content: '',
+      },
     ],
     link: [
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href:
-          '/favicon.png',
+        href: '/favicon.png',
       },
     ],
   },
