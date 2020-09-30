@@ -5,16 +5,15 @@
 </template>
 
 <style>
+@font-face {
+  font-family: Google Sans;
+  src: url('~assets/fonts/GoogleSans-Bold.ttf');
+  src: url('~assets/fonts/GoogleSans-Medium.ttf');
+  src: url('~assets/fonts/GoogleSans-Regular.ttf');
+}
+
 html {
-  font-family:
-    'Source Sans Pro',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    'Helvetica Neue',
-    Arial,
-    sans-serif;
+  font-family: Google Sans;
   font-size: 16px;
   word-spacing: 1px;
   -ms-text-size-adjust: 100%;
