@@ -23,7 +23,13 @@
         </div>
 
         <div class="content-body md:tw-w-3/5 tw-w-4/5 tw-m-auto">
-          <form class="tw-space-y-4">
+          <form class="tw-space-y-4" v-if="isSuccess === false">
+            <div class="form-group">
+              <p class="tw-text-center tw-text-base tw-text-red-500">
+                {{ error_message }}
+              </p>
+            </div>
+
             <div class="form-group">
               <input
                 type="text"
@@ -35,6 +41,7 @@
 
             <div class="form-group">
               <input
+                :disabled="isLoading"
                 @click="inviteUser()"
                 type="button"
                 value="Get Invite"
@@ -52,13 +59,27 @@
                 >
               </p>
             </div>
-
-            <div class="form-group tw-mt-32">
-              <p class="tw-text-center tw-font-bold tw-text-gray-600">
-                DSC LASU 2020
-              </p>
-            </div>
           </form>
+
+          <div class="success tw-space-y-4 tw-text-center" v-else>
+            <div class="github-icon">
+              <img
+                src="~/assets/img/Github-icn.svg"
+                alt="Github"
+                class="tw-w-32 tw-m-auto"
+              />
+            </div>
+
+            <p class="tw-font-bold">
+              Invite has been successfully sent to your email. ✅
+            </p>
+          </div>
+
+          <div class="form-group tw-mt-32">
+            <p class="tw-text-center tw-font-bold tw-text-gray-600">
+              DSC LASU 2020
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -71,15 +92,41 @@ export default {
   data() {
     return {
       username: '',
+      error_message: '',
+      isLoading: false,
+      isSuccess: false,
     }
   },
   methods: {
     async inviteUser() {
+      this.error_message = ''
+      this.isLoading = true
       try {
-        let apiCall = this.$http.post('https://dsclasu-c83d8.web.app/invite', {
+        const params = JSON.stringify({
           username: this.username,
         })
-      } catch (error) {}
+        const apiCall = await this.$http.post(
+          'https://us-central1-dsclasugithubinvite.cloudfunctions.net/app',
+          params,
+          {
+            headers: {
+              'Content-Type': 'application/json',
+            },
+          }
+        )
+
+        let apiRes = apiCall.data
+        const { status } = apiRes
+
+        if (status) {
+          this.isSuccess = true
+        }
+      } catch (error) {
+        this.isLoading = false
+        if (error.status === 401) {
+          this.error_message = error.data.body
+        }
+      }
     },
   },
 }
@@ -89,5 +136,10 @@ export default {
 .dsc-logo {
   width: 300px;
   margin: auto;
+}
+
+input[type='button']:disabled {
+  background-color: rgba(66, 133, 244, 0.4);
+  cursor: progress;
 }
 </style>
