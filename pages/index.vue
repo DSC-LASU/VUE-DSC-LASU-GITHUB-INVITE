@@ -2,7 +2,7 @@
   <fragment>
     <div class="main">
       <div
-        class="inner-content tw-border md:tw-w-3/5 tw-w-11/12 tw-m-auto tw-shadow-xs tw-rounded-lg tw-p-5 tw-py-8 tw-mt-6 tw-space-y-4"
+        class="inner-content tw-border md:tw-w-3/5 tw-w-11/12 tw-m-auto tw-shadow-xs tw-rounded-lg tw-p-5 tw-py-8 tw-mt-10 tw-space-y-4"
       >
         <div
           class="content-header tw-text-center tw-space-y-4 tw-text-xl tw-text-gray-700"
@@ -75,7 +75,7 @@
             </p>
           </div>
 
-          <div class="form-group tw-mt-32">
+          <div class="form-group tw-mt-24">
             <p class="tw-text-center tw-font-bold tw-text-gray-600">
               DSC LASU 2020
             </p>
